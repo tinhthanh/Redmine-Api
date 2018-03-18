@@ -6,7 +6,7 @@
   "apps": [
     {
       "root": "src",
-      "outDir": "dist",
+      "outDir": "../redmaine/src/main/webapp/resources",
       "assets": [
         "assets",
         "favicon.ico"
