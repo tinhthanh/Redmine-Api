@@ -1,5 +1,6 @@
 import { ManagerSearch } from './../../../_models/search-engine/ManagerSreach';
-
+import { issues } from './../../../_helpers/mocktest/fake-data/fake-issues';
+import { fakeProjects} from './../../../_helpers/mocktest/fake-data/fake-projects';
 import { Component, OnInit, HostListener } from '@angular/core';
 import { SelectItem } from 'ng2-select';
 @Component({
@@ -23,6 +24,12 @@ export class IssuesProjectsComponent implements OnInit {
   }
   constructor() {
     // this.items = new AdapterSearch(this.dataSearch).convert();
+    console.log(issues);
+    console.log(fakeProjects);
+    const d = new Date('2018-03-25T12:04:45Z');
+    console.log(d.getUTCHours()); // Hours
+    console.log(d.getUTCMinutes());
+    console.log(d.getUTCSeconds());
    }
 
   ngOnInit() {
