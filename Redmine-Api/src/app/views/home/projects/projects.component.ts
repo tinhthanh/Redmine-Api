@@ -1,5 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-
+import { fakeProjects } from './../../../_helpers/mocktest/fake-data/fake-projects';
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
@@ -7,6 +7,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 })
 export class ProjectsComponent implements OnInit {
   isShowListSelect = false ;
+  public dataFake = [...fakeProjects];
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     if (event.target.innerWidth > 999) {
@@ -17,6 +18,7 @@ export class ProjectsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log(this.dataFake);
   }
   viewProjectsSelect() {
   this.isShowListSelect = false ;

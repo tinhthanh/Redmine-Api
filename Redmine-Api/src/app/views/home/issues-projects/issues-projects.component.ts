@@ -30,6 +30,9 @@ export class IssuesProjectsComponent implements OnInit {
     console.log(d.getUTCHours()); // Hours
     console.log(d.getUTCMinutes());
     console.log(d.getUTCSeconds());
+
+    const date = new Date('6/29/2011 4:52:48 PM UTC');
+    date.toString();
    }
 
   ngOnInit() {
