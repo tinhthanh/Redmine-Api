@@ -1,21 +1,32 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HomeComponent } from './home/home.component';
-import { Home1Component } from './home1/home1.component';
+import { Page404Component } from './views/pages/page-404/page-404.component';
+import { DashboardLayoutComponent, PagesLayoutComponent, ManagerLayoutComponent } from './containers';
+import { HomeHeaderComponent, HomeFooterComponent } from './components';
+// layout web
+const APP_CONTAINERS = [
+  DashboardLayoutComponent,
+  PagesLayoutComponent,
+  ManagerLayoutComponent
+];
+// component container in layout web
+const APP_COMPOMENTS = [
+  HomeHeaderComponent,
+  HomeFooterComponent
+];
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    Home1Component
+    ...APP_CONTAINERS ,
+    ...APP_COMPOMENTS,
+    Page404Component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    NgbModule.forRoot()
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

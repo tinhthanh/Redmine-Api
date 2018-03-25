@@ -1,0 +1,55 @@
+npm install --save @ng-bootstrap/ng-bootstrap driver
+npm install ngx-bootstrap --save
+
+npm install bootstrap@4.0.0-beta.2 --save  css
+fix erro 
+ - 
+	 npm install @angular-devkit/core@0.0.29
+npm install jquery --save or npm install jquery@1.9.1 
+npm install popper.js@^1.12.3 
+import file style.css 
+	@import "~bootstrap/dist/css/bootstrap.css";
+ 
+import appModule  NgbModule.forRoot() 
+npm install bootstrap@4.0.0-beta.2 --save
+fix erro install bootstraps
+https://ng-bootstrap.github.io/#/components/alert/examples
+using 
+i18n https://angular.io/guide/i18n
+
+CLI 
+ 	ng g module home --routing  ( create routing  ) 
+
+deploy 
+npm install copyfiles -g
+ "build": "ng build --prod",
+  
+ "postbuild": "npm run deploy",
+
+ "predeploy": "rimraf ../palltech/src/main/resources/static && mkdirp ../palltech/src/main/resources/static",
+
+  "deploy": "copyfiles -f dist/** ../palltech/src/main/resources/static",
+	npm run build
+
+bootrap3
+npm install ngx-bootstrap --save
+npm install bootstrap@3.3.7
+https://valor-software.com/ngx-bootstrap/#/dropdowns
+using module import 
+
+loading lazy images 
+npm install ng-lazyload-image --save
+import { LazyLoadImageModule } from 'ng-lazyload-image';
+https://github.com/tjoskar/ng-lazyload-image
+
+
+https://github.com/valor-software/ng2-plans
+
+redmine 
+tinhthanh
+12345678
+
+
+https://valor-software.com/ng2-select/
+install select 
+

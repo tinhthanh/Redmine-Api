@@ -1,0 +1,465 @@
+<div class="p-row">
+    <div class="p-container" style="  padding: 0 10px 0px 10px;">
+        <div class="p-row">
+            <div class="p-col-m-12 ">
+                <div class="p-col-m-12 ">
+
+
+                    <!-- <div style="margin-top: 20px;
+      padding-top: 20px;" class="panel panel-default">
+                        <div class="panel-body">
+
+                            <div class="p-col-m-3">
+
+
+                                <label class="trigger">
+                                    Select All
+                                    <input style="float: left;" type="checkbox" class="checkbox checkbox--red" />
+                                    <span class="msg">
+                                        Slow time process !
+                                    </span>
+                                </label>
+
+                            </div>
+
+                            <div class="p-col-m-9">
+                                <app-search-engine (searchNameChange)="twoWayBidingInput($event)" [(searchName)]="searchName" (search)="callBackSearch($event)"></app-search-engine>
+
+                                {{ searchName }}
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+                <div  class="p-col-m-12">
+                    <div class="p-col-m-12">
+                        <div style="padding-left: 10px;
+                        padding-right: 10px;" class="p-col-m-3">
+                            <h3>Filters</h3>
+                            <ng-select [multiple]="true" [items]="items" [disabled]="disabled" (data)="refreshValue($event)" (selected)="selected($event)"
+                                (removed)="removed($event)" placeholder="Add filter "></ng-select>
+                            <!-- <pre>{{itemsToString(value)}}</pre> -->
+                            <div>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 20px;" class="p-col-m-9">
+                                <app-search-issues (sendDataSearch)="callBackListSearch($event)" [(itemsSelect)]="itemsSelect"></app-search-issues>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div  class="p-col-m-12">
+                    <div class="panel panel-default ">
+                        
+                        <div style="padding: 0px" class="panel-body">
+                            <div  style=" padding: 0 5px 0 0;" class="p-col-m-8 p-mobile-timeline">
+
+                                <div *ngIf="isShowListSelect;then  templateViewSelect else templateListIssues  ">Loading...</div>
+
+
+                            </div>
+                            <div class="p-col-m-4 p-mobile-list-task">
+                                <div class="p-container" style="background-color: white ; ">
+
+
+
+                                    <div *ngIf="false; else templateViewSelect">loading...</div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<nav class="p-menu">
+    <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
+    <label class="menu-open-button" for="menu-open">
+        <span class="lines line-1"></span>
+        <span class="lines line-2"></span>
+        <span class="lines line-3"></span>
+    </label>
+
+    <a class="menu-item blue" (click)="viewProjects()" tooltip="Select">
+        <i class="fa fa-anchor"></i>
+    </a>
+    <a class="menu-item green" tooltip="Projects" (click)="viewProjectsSelect()">
+        <i class="fa fa-coffee"></i>
+    </a>
+    <!--    <a href="#" class="menu-item red"> <i class="fa fa-heart"></i> </a>
+      <a href="#" class="menu-item purple"> <i class="fa fa-microphone"></i> </a>
+      <a href="#" class="menu-item orange"> <i class="fa fa-star"></i> </a> -->
+    <!--    <a href="#" class="menu-item lightblue"> <i class="fa fa-diamond"></i> </a> -->
+</nav>
+<!-- <div class="p-row">
+      <div class="p-col-m-12">
+        
+          <div class="p-row p-container">
+            
+                   <div class="col-md-6">
+                      <div class="panel panel-info">
+                         <div class="panel-heading">
+                            <ul class="nav nav-tabs">
+                               <li class="active"><a href="#"><i class="fa fa-headphones"></i> Communication</a></li>
+                               <li><a href="#"><i class="fa fa-comments"></i> Comments</a></li>
+                               <li><a href="#"><i class="fa fa-history"></i> History</a></li>
+                            </ul>
+                         </div>
+                         <div class="panel-body">Example text.</div>
+                      </div>
+                   </div>
+                
+                   <div class="col-md-6">
+                      <div class="panel panel-danger">
+                         <div class="panel-heading">
+                            <ul class="nav nav-tabs">
+                               <li class="active"><a href="#"><i class="fa fa-headphones"></i> Communication</a></li>
+                               <li><a href="#"><i class="fa fa-comments"></i> Comments</a></li>
+                               <li><a href="#"><i class="fa fa-history"></i> History</a></li>
+                            </ul>
+                         </div>
+                         <div class="panel-body">Example text.</div>
+                      </div>
+                   </div>
+                
+                   <div class="col-md-6">
+                      <div class="panel panel-warning">
+                         <div class="panel-heading">
+                            <ul class="nav nav-tabs">
+                               <li class="active"><a href="#"><i class="fa fa-headphones"></i> Communication</a></li>
+                               <li><a href="#"><i class="fa fa-comments"></i> Comments</a></li>
+                               <li><a href="#"><i class="fa fa-history"></i> History</a></li>
+                            </ul>
+                         </div>
+                         <div class="panel-body">Example text.</div>
+                      </div>
+                   </div>
+                
+                   <div class="col-md-6">
+                      <div class="panel panel-success">
+                         <div class="panel-heading">
+                            <ul class="nav nav-tabs">
+                               <li class="active"><a href="#"><i class="fa fa-headphones"></i> Communication</a></li>
+                               <li><a href="#"><i class="fa fa-comments"></i> Comments</a></li>
+                               <li><a href="#"><i class="fa fa-history"></i> History</a></li>
+                            </ul>
+                         </div>
+                         <div class="panel-body">Example text.</div>
+                      </div>
+                   </div>
+                
+                   <div class="col-md-6">
+                      <div class="panel panel-default">
+                         <div class="panel-heading">
+                            <ul class="nav nav-tabs">
+                               <li class="active"><a href="#"><i class="fa fa-headphones"></i> Communication</a></li>
+                               <li><a href="#"><i class="fa fa-comments"></i> Comments</a></li>
+                               <li><a href="#"><i class="fa fa-history"></i> History</a></li>
+                            </ul>
+                         </div>
+                         <div class="panel-body">Example text.</div>
+                      </div>
+                   </div>
+                
+             
+                   <div class="col-md-6">
+                      <div class="panel panel-primary">
+                         <div class="panel-heading">
+                            <ul class="nav nav-tabs">
+                               <li class="active"><a href="#"><i class="fa fa-headphones"></i> Communication</a></li>
+                               <li><a href="#"><i class="fa fa-comments"></i> Comments</a></li>
+                               <li><a href="#"><i class="fa fa-history"></i> History</a></li>
+                            </ul>
+                         </div>
+                         <div class="panel-body">Example text.</div>
+                      </div>
+                   </div>
+                
+          </div>
+       </div>
+   </div> -->
+
+
+
+
+<!--             <a class="btn icon-btn btn-default" href="#"><span class="glyphicon btn-glyphicon glyphicon-save img-circle text-muted"></span>Download</a>
+              <a class="btn icon-btn btn-muted" href="#"><span class="glyphicon btn-glyphicon glyphicon-remove-circle img-circle text-muted"></span>Unavailable</a>
+              <a class="btn icon-btn btn-primary" href="#"><span class="glyphicon btn-glyphicon glyphicon-thumbs-up img-circle text-primary"></span>Like</a>
+              <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>Add</a>
+              <a class="btn icon-btn btn-info" href="#"><span class="glyphicon btn-glyphicon glyphicon-share img-circle text-info"></span>Share</a>
+              <a class="btn icon-btn btn-warning" href="#"><span class="glyphicon btn-glyphicon glyphicon-minus img-circle text-warning"></span>Remove</a>
+              <a class="btn icon-btn btn-danger" href="#"><span class="glyphicon btn-glyphicon glyphicon-trash img-circle text-danger"></span>Delete</a> -->
+
+
+<ng-template #templateListIssues>
+    <div class="p-col-md-12">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h3 class="panel-title">List Issues select</h3>
+            </div>
+            <div style="padding: 5px;" class="panel-body">
+                <table class="p-table-reposive">
+                    <thead>
+                        <tr>
+                            <th>Select</th>
+                            <th>Issues name</th>
+                            <th style="width: 50px;">Action</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-column="Select">
+                                <label class="trigger">
+                                    <input class="checkbox checkbox--red" style="float: left; border: 2px solid #3698db; " type="checkbox">
+                                </label>
+                            </td>
+                            <td data-column="Project name">Attends the Philadelphia Museum School of Industrial Art. Studies design with Alexey Brodovitch,
+                                art director at Harper's Bazaar, and works as his assistant.</td>
+                            <td style="width: 100px;" data-column="Action">
+
+                                <a class="btn icon-btn btn-default">
+                                    <span class="glyphicon btn-glyphicon glyphicon-share img-circle text-muted"></span>View</a>
+                                <a class="btn icon-btn btn-success">
+                                    <span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>Add</a>
+                                <a class="btn icon-btn btn-danger">
+                                    <span class="glyphicon btn-glyphicon glyphicon-trash img-circle text-danger"></span>Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-column="Select">
+                                <label class="trigger">
+                                    <input class="checkbox checkbox--red" style="float: left; border: 2px solid #3698db;" type="checkbox">
+                                </label>
+                            </td>
+                            <td data-column="Project name">Studies design with Alexey Brodovitch, art director at Harper's Bazaar, and works as his assistant.</td>
+                            <td style="width: 100px; " data-column="Action">
+                                <a class="btn icon-btn btn-default">
+                                    <span class="glyphicon btn-glyphicon glyphicon-share img-circle text-muted"></span>View</a>
+                                <a class="btn icon-btn btn-success">
+                                    <span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>Add</a>
+                                <a class="btn icon-btn btn-danger">
+                                    <span class="glyphicon btn-glyphicon glyphicon-trash img-circle text-danger"></span>Remove</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="p-col-m-12" style="padding: 5px 0 5px 0px;">
+                    <a class="btn icon-btn btn-default" href="#">
+                        <span class="glyphicon btn-glyphicon glyphicon-share img-circle text-muted"></span>View Report</a>
+                    <a class="btn icon-btn btn-muted" href="#">
+                        <span class="glyphicon btn-glyphicon glyphicon-remove-circle img-circle text-muted"></span>Remove all</a>
+                </div>
+            </div>
+        </div>
+        <!-- <table class="table table-hover table-striped">
+              <tbody>
+                  <tr>
+                      <td>
+                        
+                          <label class="trigger">
+                              <input style="border: 1px solid #3e783f;" type="checkbox" class="checkbox checkbox--red " />
+                          </label>
+                          
+                      </td>
+                      <td>
+                          <h4>
+                              <b>Asistente de sistemas</b>
+                          </h4>
+                          <p>@ramonvillaw</p>
+                      </td>
+                      <td>
+                          <img src="http://pingendo.github.io/pingendo-bootstrap/assets/user_placeholder.png" class="img-circle" width="60">
+                      </td>
+                      <td>
+                          <h4>
+                              <b>Ramón Villa Awad</b>
+                          </h4>
+                          <a href="mailto:ramonvillaw@gmail.com">ramonvillaw@gmail.com</a>
+                      </td>
+                      <td>2 años</td>
+                      <td>
+                          <div class="btn-group">
+                              <button class="btn btn-default" value="left" type="button">
+                                  <i class="fa fa-fw s fa-remove"></i>Eliminar</button>
+                              <button class="btn btn-default" value="right" type="button">
+                                  <i class="fa fa-fw fa-cog"></i>Configurar</button>
+                          </div>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <a href="#"><i class="fa fa-2x fa-fw fa-eye-slash"></i></a>
+                      </td>
+                      <td>
+                          <h4>
+                              <b>Supervisora</b>
+                          </h4>
+                          <p>@claudiaramos</p>
+                      </td>
+                      <td>
+                          <img src="http://pingendo.github.io/pingendo-bootstrap/assets/user_placeholder.png" class="img-circle" width="60">
+                      </td>
+                      <td>
+                          <h4>
+                              <b>Claudia Ramos</b>
+                          </h4>
+                          <a href="mailto:claudia@mail.com">claudia@mail.com</a>
+                      </td>
+                      <td>3 años</td>
+                      <td>
+                          <div class="btn-group">
+                              <button class="btn btn-default" value="left" type="button">
+                                  <i class="fa fa-fw s fa-remove"></i>Eliminar</button>
+                              <button class="btn btn-default" value="right" type="button">
+                                  <i class="fa fa-fw fa-cog"></i>Configurar</button>
+                          </div>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <a href="#"><i class="fa fa-2x fa-fw fa-eye"></i></a>
+                      </td>
+                      <td>
+                          <h4>
+                              <b>Gerente de capacitación</b>
+                          </h4>
+                          <p>@anaojeda</p>
+                      </td>
+                      <td>
+                          <img src="http://pingendo.github.io/pingendo-bootstrap/assets/user_placeholder.png" class="img-circle" width="60">
+                      </td>
+                      <td>
+                          <h4>
+                              <b>Ana Isabel Ojeda</b>
+                          </h4>
+                          <a href="mailto:ana@mail.com">ana@mail.com</a>
+                      </td>
+                      <td>1 mes</td>
+                      <td>
+                          <div class="btn-group">
+                              <button class="btn btn-default" value="left" type="button">
+                                  <i class="fa fa-fw s fa-remove"></i>Eliminar</button>
+                              <button class="btn btn-default" value="right" type="button">
+                                  <i class="fa fa-fw fa-cog"></i>Configurar</button>
+                          </div>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <a href="#"><i class="fa fa-2x fa-fw -alt fa-eye-slash"></i></a>
+                      </td>
+                      <td>
+                          <h4>
+                              <b>Director de Recursos Humanos</b>
+                          </h4>
+                          <p>@Carlos Enciso</p>
+                      </td>
+                      <td>
+                          <img src="http://pingendo.github.io/pingendo-bootstrap/assets/user_placeholder.png" class="img-circle" width="60">
+                      </td>
+                      <td>
+                          <h4>
+                              <b>Carlos Enciso</b>
+                          </h4>
+                          <a href="mailto: carlos@mail.com"> carlos@mail.com</a>
+                      </td>
+                      <td>5 años</td>
+                      <td>
+                          <div class="btn-group">
+                              <button class="btn btn-default" value="left" type="button">
+                                  <i class="fa fa-fw s fa-remove"></i>Eliminar</button>
+                              <button class="btn btn-default" value="right" type="button">
+                                  <i class="fa fa-fw fa-cog"></i>Configurar</button>
+                          </div>
+                      </td>
+                  </tr>
+              </tbody>
+          </table> -->
+    </div>
+
+    <div class="p-col-m-12">
+        <ul class="pagination">
+            <li class="disabled">
+                <a href="#">«</a>
+            </li>
+            <li class="active">
+                <a href="#">1
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">2</a>
+            </li>
+            <li>
+                <a href="#">3</a>
+            </li>
+            <li>
+                <a href="#">4</a>
+            </li>
+            <li>
+                <a href="#">5</a>
+            </li>
+            <li>
+                <a href="#">»</a>
+            </li>
+        </ul>
+    </div>
+</ng-template>
+<ng-template #templateViewSelect>
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            <h3 class="panel-title">List Issues select</h3>
+        </div>
+        <div style="padding: 5px;" class="panel-body">
+            <table class="p-table-reposive">
+                <thead>
+                    <tr>
+                        <th>Issues name</th>
+                        <th style="width: 50px;">Action</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-column="Project name">Attends the Philadelphia Museum School of Industrial Art. Studies design with Alexey Brodovitch,
+                            art director at Harper's Bazaar, and works as his assistant.</td>
+                        <td style="width: 100px;" data-column="Action">
+
+                            <a class="btn icon-btn btn-default">
+                                <span class="glyphicon btn-glyphicon glyphicon-share img-circle text-muted"></span>View</a>
+                            <a class="btn icon-btn btn-success">
+                                <span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>Add</a>
+                            <a class="btn icon-btn btn-danger">
+                                <span class="glyphicon btn-glyphicon glyphicon-trash img-circle text-danger"></span>Delete</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-column="Project name">Studies design with Alexey Brodovitch, art director at Harper's Bazaar, and works as his assistant.</td>
+                        <td style="width: 100px;" data-column="Action">
+                            <a class="btn icon-btn btn-default">
+                                <span class="glyphicon btn-glyphicon glyphicon-share img-circle text-muted"></span>View</a>
+                            <a class="btn icon-btn btn-success">
+                                <span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>Add</a>
+                            <a class="btn icon-btn btn-danger">
+                                <span class="glyphicon btn-glyphicon glyphicon-trash img-circle text-danger"></span>Remove</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="p-col-m-12" style="padding: 5px 0 5px 0px;">
+                <a class="btn icon-btn btn-default" href="#">
+                    <span class="glyphicon btn-glyphicon glyphicon-share img-circle text-muted"></span>View Report</a>
+                <a class="btn icon-btn btn-muted" href="#">
+                    <span class="glyphicon btn-glyphicon glyphicon-remove-circle img-circle text-muted"></span>Remove all</a>
+            </div>
+        </div>
+    </div>
+</ng-template>

@@ -1,0 +1,325 @@
+<div class="p-row">
+  <div class="p-container" style="  padding: 0 10px 0px 10px;" c>
+    <div class="p-row">
+      <div class="p-col-m-12 ">
+        <div class="p-col-m-12 ">
+
+
+          <div style="margin-top: 20px;
+    padding-top: 20px;" class="panel panel-default">
+            <div class="panel-body">
+
+              <div class="p-col-m-3">
+
+
+                <label class="trigger">
+                  Select All
+                  <input style="float: left;" type="checkbox" class="checkbox checkbox--red" />
+                  <span class="msg">
+                    Slow time process !
+                  </span>
+                </label>
+
+              </div>
+
+              <div class="p-col-m-9">
+                <div id="imaginary_container">
+                  <div class="input-group stylish-input-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                    <span class="input-group-addon">
+                      <button type="submit">
+                        <span class="glyphicon glyphicon-search"></span>
+                      </button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+        
+  
+        <div class="p-col-m-12">
+          <div class="panel panel-default ">
+              <div class="panel-heading">
+                  <h3 class="panel-title">List Project in Redmine</h3>
+                </div>
+            <div class="panel-body">
+              <div class="p-col-m-8 p-mobile-timeline">
+
+                <div *ngIf="isShowListSelect;then  templateViewSelect else templateListProjects   ">Loading...</div>
+
+
+              </div>
+              <div style="padding-top: 30px;" class="p-col-m-4 p-mobile-list-task">
+                <div class="p-container" style="background-color: white ; ">
+
+
+
+                  <div *ngIf="false; else templateViewSelect">loading...</div>
+
+
+                </div>
+              
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<nav class="p-menu">
+  <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
+  <label class="menu-open-button" for="menu-open">
+    <span class="lines line-1"></span>
+    <span class="lines line-2"></span>
+    <span class="lines line-3"></span>
+  </label>
+
+  <a class="menu-item blue" (click)="viewProjects()" tooltip="Select">
+    <i class="fa fa-anchor"></i>
+  </a>
+  <a class="menu-item green" tooltip="Projects" (click)="viewProjectsSelect()">
+    <i class="fa fa-coffee"></i>
+  </a>
+  <!--    <a href="#" class="menu-item red"> <i class="fa fa-heart"></i> </a>
+    <a href="#" class="menu-item purple"> <i class="fa fa-microphone"></i> </a>
+    <a href="#" class="menu-item orange"> <i class="fa fa-star"></i> </a> -->
+  <!--    <a href="#" class="menu-item lightblue"> <i class="fa fa-diamond"></i> </a> -->
+</nav>
+<!-- <div class="p-row">
+    <div class="p-col-m-12">
+      
+        <div class="p-row p-container">
+          
+                 <div class="col-md-6">
+                    <div class="panel panel-info">
+                       <div class="panel-heading">
+                          <ul class="nav nav-tabs">
+                             <li class="active"><a href="#"><i class="fa fa-headphones"></i> Communication</a></li>
+                             <li><a href="#"><i class="fa fa-comments"></i> Comments</a></li>
+                             <li><a href="#"><i class="fa fa-history"></i> History</a></li>
+                          </ul>
+                       </div>
+                       <div class="panel-body">Example text.</div>
+                    </div>
+                 </div>
+              
+                 <div class="col-md-6">
+                    <div class="panel panel-danger">
+                       <div class="panel-heading">
+                          <ul class="nav nav-tabs">
+                             <li class="active"><a href="#"><i class="fa fa-headphones"></i> Communication</a></li>
+                             <li><a href="#"><i class="fa fa-comments"></i> Comments</a></li>
+                             <li><a href="#"><i class="fa fa-history"></i> History</a></li>
+                          </ul>
+                       </div>
+                       <div class="panel-body">Example text.</div>
+                    </div>
+                 </div>
+              
+                 <div class="col-md-6">
+                    <div class="panel panel-warning">
+                       <div class="panel-heading">
+                          <ul class="nav nav-tabs">
+                             <li class="active"><a href="#"><i class="fa fa-headphones"></i> Communication</a></li>
+                             <li><a href="#"><i class="fa fa-comments"></i> Comments</a></li>
+                             <li><a href="#"><i class="fa fa-history"></i> History</a></li>
+                          </ul>
+                       </div>
+                       <div class="panel-body">Example text.</div>
+                    </div>
+                 </div>
+              
+                 <div class="col-md-6">
+                    <div class="panel panel-success">
+                       <div class="panel-heading">
+                          <ul class="nav nav-tabs">
+                             <li class="active"><a href="#"><i class="fa fa-headphones"></i> Communication</a></li>
+                             <li><a href="#"><i class="fa fa-comments"></i> Comments</a></li>
+                             <li><a href="#"><i class="fa fa-history"></i> History</a></li>
+                          </ul>
+                       </div>
+                       <div class="panel-body">Example text.</div>
+                    </div>
+                 </div>
+              
+                 <div class="col-md-6">
+                    <div class="panel panel-default">
+                       <div class="panel-heading">
+                          <ul class="nav nav-tabs">
+                             <li class="active"><a href="#"><i class="fa fa-headphones"></i> Communication</a></li>
+                             <li><a href="#"><i class="fa fa-comments"></i> Comments</a></li>
+                             <li><a href="#"><i class="fa fa-history"></i> History</a></li>
+                          </ul>
+                       </div>
+                       <div class="panel-body">Example text.</div>
+                    </div>
+                 </div>
+              
+           
+                 <div class="col-md-6">
+                    <div class="panel panel-primary">
+                       <div class="panel-heading">
+                          <ul class="nav nav-tabs">
+                             <li class="active"><a href="#"><i class="fa fa-headphones"></i> Communication</a></li>
+                             <li><a href="#"><i class="fa fa-comments"></i> Comments</a></li>
+                             <li><a href="#"><i class="fa fa-history"></i> History</a></li>
+                          </ul>
+                       </div>
+                       <div class="panel-body">Example text.</div>
+                    </div>
+                 </div>
+              
+        </div>
+     </div>
+ </div> -->
+
+
+
+
+<!--             <a class="btn icon-btn btn-default" href="#"><span class="glyphicon btn-glyphicon glyphicon-save img-circle text-muted"></span>Download</a>
+            <a class="btn icon-btn btn-muted" href="#"><span class="glyphicon btn-glyphicon glyphicon-remove-circle img-circle text-muted"></span>Unavailable</a>
+            <a class="btn icon-btn btn-primary" href="#"><span class="glyphicon btn-glyphicon glyphicon-thumbs-up img-circle text-primary"></span>Like</a>
+            <a class="btn icon-btn btn-success" href="#"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>Add</a>
+            <a class="btn icon-btn btn-info" href="#"><span class="glyphicon btn-glyphicon glyphicon-share img-circle text-info"></span>Share</a>
+            <a class="btn icon-btn btn-warning" href="#"><span class="glyphicon btn-glyphicon glyphicon-minus img-circle text-warning"></span>Remove</a>
+            <a class="btn icon-btn btn-danger" href="#"><span class="glyphicon btn-glyphicon glyphicon-trash img-circle text-danger"></span>Delete</a> -->
+
+
+<ng-template #templateListProjects>
+  <div class="page">
+    <div class="page__demo">
+      <div class="main-container page__container">
+        <div class="timeline">
+          <div class="timeline__group">
+            <span class="timeline__year">2008</span>
+            <div class="timeline__box">
+              <div class="timeline__date">
+                <span class="timeline__day">2</span>
+                <span class="timeline__month">Feb</span>
+              </div>
+              <div class="timeline__post">
+                <div class="timeline__content">
+                  <p style="position: relative ; ">Attends the Philadelphia Museum School of Industrial Art. Studies design with Alexey Brodovitch, art director
+                    at Harper's Bazaar, and works as his assistant.
+                    <a class="btn icon-btn btn-default" ><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-muted"></span>Add</a>
+                  
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="timeline__box">
+              <div class="timeline__date">
+                <span class="timeline__day">1</span>
+                <span class="timeline__month">Sept</span>
+              </div>
+              <div class="timeline__post">
+                <div class="timeline__content">
+                  <p>Started from University of Pennsylvania. This is an important stage of my career. Here I worked in the
+                    local magazine. The experience greatly affected me</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="timeline__group">
+            <span class="timeline__year">2014</span>
+            <div class="timeline__box">
+              <div class="timeline__date">
+                <span class="timeline__day">14</span>
+                <span class="timeline__month">Jul</span>
+              </div>
+              <div class="timeline__post">
+                <div class="timeline__content">
+                  <p>Travels to France, Italy, Spain, and Peru. After completing fashion editorial in Lima, prolongs stay to
+                    make portraits of local people in a daylight studio</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="timeline__group">
+            <span class="timeline__year">2016</span>
+            <div class="timeline__box">
+              <div class="timeline__date">
+                <span class="timeline__day">28</span>
+                <span class="timeline__month">Aug</span>
+              </div>
+              <div class="timeline__post">
+                <div class="timeline__content">
+                  <p>Upon moving to Brooklyn that summer, I began photographing weddings in Chicago</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="p-col-m-12">
+      <ul class="pagination">
+          <li class="disabled"><a href="#">«</a></li>
+          <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li><a href="#">»</a></li>
+        </ul>
+  </div>
+</ng-template>
+<ng-template #templateViewSelect>
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <h3 class="panel-title">List Project select</h3>
+    </div>
+    <div style="padding: 5px;" class="panel-body">
+      <table class="p-table-reposive">
+        <thead>
+          <tr>
+            <th>Project name</th>
+            <th style="width: 50px;">Action</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-column="Project name">Attends the Philadelphia Museum School of Industrial Art. Studies design with Alexey Brodovitch, art director
+              at Harper's Bazaar, and works as his assistant.</td>
+            <td style="width: 100px;" data-column="Action">
+
+              <a class="btn icon-btn btn-default">
+                <span class="glyphicon btn-glyphicon glyphicon-share img-circle text-muted"></span>View</a>
+              <a class="btn icon-btn btn-success">
+                <span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>Add</a>
+              <a class="btn icon-btn btn-danger">
+                <span class="glyphicon btn-glyphicon glyphicon-trash img-circle text-danger"></span>Delete</a>
+            </td>
+          </tr>
+          <tr>
+            <td data-column="Project name">Studies design with Alexey Brodovitch, art director at Harper's Bazaar, and works as his assistant.</td>
+            <td style="width: 100px;" data-column="Action">
+              <a class="btn icon-btn btn-default">
+                <span class="glyphicon btn-glyphicon glyphicon-share img-circle text-muted"></span>View</a>
+              <a class="btn icon-btn btn-success">
+                <span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>Add</a>
+              <a class="btn icon-btn btn-danger">
+                <span class="glyphicon btn-glyphicon glyphicon-trash img-circle text-danger"></span>Remove</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="p-col-m-12" style="padding: 5px 0 5px 0px;">
+        <a class="btn icon-btn btn-default" href="#">
+          <span class="glyphicon btn-glyphicon glyphicon-share img-circle text-muted"></span>View all</a>
+        <a class="btn icon-btn btn-muted" href="#">
+          <span class="glyphicon btn-glyphicon glyphicon-remove-circle img-circle text-muted"></span>Remove all</a>
+      </div>
+    </div>
+  </div>
+</ng-template>

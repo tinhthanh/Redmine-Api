@@ -1,0 +1,24 @@
+<div style="margin-bottom: 1px;" class="panel panel-success">
+    <div class="panel-heading">
+        <h3 class="panel-title">Filters select</h3>
+    </div>
+    <div style="padding: 5px;" class="panel-body"> 
+      <div *ngFor="let item of itemsSelect" class="p-col-m-12">
+        <div class="p-col-m-2">
+            <label class="trigger">
+                <input  [checked]="(item.id.indexOf('_') === -1 ) " (change)="changeSelect($event, item)" class="checkbox checkbox--red" style="float: left; border: 2px solid #3698db;" type="checkbox">
+              </label>
+            <label>{{  item.text}}</label>
+        </div>
+        <app-search-engine-child (eventAddChildSearch)="callBackEventAdd($event)" [rootItem]="item"  ></app-search-engine-child>
+    </div>
+        <div class="p-col-m-12" style="padding: 5px 0 5px 0px;">
+            <a  (click)="appLy()"  class="btn icon-btn btn-default">
+                <span class="glyphicon btn-glyphicon glyphicon-share img-circle text-muted"></span>Apply </a>
+            <a class="btn icon-btn btn-muted" (click)="
+            unChecked()">
+                <span class="glyphicon btn-glyphicon glyphicon-remove-circle img-circle text-muted"></span>
+                Unchecked All</a>
+        </div>
+    </div>
+</div>
